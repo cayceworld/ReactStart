@@ -6,10 +6,10 @@ import Container from './components/Container/Container';
 
 const App = () => {
   return (
-      <Container>
-          <Hero />
-          <SearchForm />
-          <List />
+    <Container>
+      <Hero />
+      <SearchForm />
+      <List />
     </Container>
   );
 };
