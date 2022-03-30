@@ -13,7 +13,7 @@ const CardForm = props => {
         e.preventDefault();
         dispatch({type: 'ADD_CARD' , newCard: {title,  columnId:props.columnId }});
         setTitle('');
-        console.log(props.columnId)
+        console.log(title)
     };
 
 	return (

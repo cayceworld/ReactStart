@@ -16,6 +16,12 @@ const reducer = (state, action) => {
       console.log(action.newCard);
       return { ...state, cards: [...state.cards, { ...action.newCard, id: shortid(), }] };
 
+    case 'FILTER_CARD':
+      console.log('filter')
+      console.log(action.filteredCard.searchValue)
+      return {...state, cards: [...state.cards.filter(card => card.title.toLowerCase().includes(action.filteredCard.searchValue.toLowerCase()))] }
+
+
     default:
       return state;
   }
