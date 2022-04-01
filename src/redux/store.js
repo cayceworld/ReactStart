@@ -1,7 +1,17 @@
 import { createStore } from 'redux';
 import initialState from './initialState';
 import shortid from 'shortid';
+import containsContent from '../utils/strContains';
 
+
+export const getFilteredCards = ({ cards, searchValue }, columnId) => cards
+  .filter(card => card.columnId === columnId && containsContent(card.title, searchValue));
+export  const getAllColumns = state => state.columns; 
+export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
+export const addCard = payload => ({type: 'ADD_CARD', payload});
+export const filterCard = payload => ({type: 'FILTER_CARD', payload});
+
+  console.log(getAllColumns);
 
 const reducer = (state, action) => {
   //console.log(action);
@@ -20,6 +30,8 @@ const reducer = (state, action) => {
       return state;
   }
 };
+
+
 
 
 
