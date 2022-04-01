@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 const SearchForm = props => {
 
-  const [searchValue, setSearchValue] = useState(''); 
+  const [searchValue, setSearchValue] = useState('');
 
 
 
@@ -15,16 +15,16 @@ const SearchForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch({type: 'FILTER_CARD', filteredCard: {searchValue}})
+    dispatch({ type: 'FILTER_CARD', payload: { searchValue } })
     setSearchValue('');
     console.log(searchValue);
   }
 
   return (
-      <form className={styles.searchForm} onSubmit={handleSubmit}>
-          <TextInput value={searchValue} onChange={e => setSearchValue(e.target.value)}    placeholder="Search…"  />
-          <Button><span className="fa fa-search" /></Button>
-      </form>
+    <form className={styles.searchForm} onSubmit={handleSubmit}>
+      <TextInput value={searchValue} onChange={e => setSearchValue(e.target.value)} placeholder="Search…" />
+      <Button><span className="fa fa-search" /></Button>
+    </form>
   );
 };
 
