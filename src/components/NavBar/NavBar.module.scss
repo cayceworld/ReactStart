@@ -10,18 +10,25 @@
   justify-content: space-between;
   margin: 0 auto;
   padding: 0 10px;
+  
 
   ul{
     display: flex;
     flex-direction: row;
+    
     li{
       padding: 0 10px;
       width: 100%;
       list-style-type: none;
+      
       a{
-        color: $color-light;
         text-decoration: none;
+        color: $color-light;
       }
+      a.linkActive{
+        color: $color-warning;
+      }
+      
     }
   }
 }
@@ -35,3 +42,4 @@
   color: $color-light;
 }
 }
+

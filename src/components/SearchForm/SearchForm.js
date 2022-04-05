@@ -2,10 +2,10 @@ import styles from './SearchForm.module.scss';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { filterCard } from '../../redux/store';
 
-const SearchForm = props => {
+const SearchForm = () => {
 
   const [searchValue, setSearchValue] = useState('');
 
@@ -20,6 +20,10 @@ const SearchForm = props => {
     setSearchValue('');
     console.log(searchValue);
   }
+
+  useEffect(() =>{
+    dispatch(filterCard({searchValue: ''}))
+  }, []);
 
   return (
     <form className={styles.searchForm} onSubmit={handleSubmit}>
